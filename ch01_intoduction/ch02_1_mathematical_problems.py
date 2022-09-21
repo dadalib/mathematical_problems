@@ -35,6 +35,8 @@ def is_prime(potentially_prime):
 if __name__ == "__main__":
     # count_digits(12342342324646)
     # extract_digit(126)
-    # is_prime(10)
-    double_it = lambda x:x*2
-    print(double_it(2))
+    is_prime(10)
+    #double_it = lambda x:x*2
+    # print(double_it(2))
+
+

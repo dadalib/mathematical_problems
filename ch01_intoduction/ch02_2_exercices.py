@@ -380,6 +380,16 @@ def power_of_iterative(value,exponent):
     print (result)
     return result
 
+def pascal_triangle(row,col):
+    
+    if col ==1 and row ==1:
+        return 1
+
+    if col == 1 or col == row:
+        return 1
+
+    return pascal_triangle(row-1,col) + pascal_triangle(row-1,col-1)
+
 
 
  

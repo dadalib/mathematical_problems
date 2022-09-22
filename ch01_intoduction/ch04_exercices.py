@@ -56,15 +56,54 @@ def hex_to_decimal(number):
 
         else:
             value = ord(current_char.upper()) -ord('A')+10
+            print(value)
 
+        print("decimal value",decimal_value)
         decimal_value = decimal_value*16 + value
+        print("decimal value af",decimal_value)
     
 
     print (decimal_value)
     return decimal_value
 
+def separator_replace(list_words,chr_replace):
+    new_string=""
+    if len(list_words)<1 or type(list_words) == int:
+        raise ValueError("Please entry a list")
+    
+    for word in list_words:
+        new_string+=word+chr_replace
+
+    print(new_string)
+    return new_string
+
+
+def reverse_string(word):
+    """Operations with range and steps"""
+    reverse_word=""
+    print(len(word))
+    for i in range(len(word)-1,-1,-1):
+        print("i",i)
+        current_char = word[i]
+        print(current_char)
+        reverse_word += current_char
+
+    print(reverse_word)
+    return reverse_word
+
+
+
+
+
+
+        
+
+
+
 
 if __name__ == "__main__":
     # binary_to_decimal("110")
-    hex_to_decimal("A")
+    # hex_to_decimal("19")
+    # separator_replace(["toto","mama"],"£££")
+    reverse_string("LOLITA")
 

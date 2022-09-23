@@ -1,4 +1,5 @@
 import math
+from multiprocessing.sharedctypes import Value
 import pytest
 
 def is_binary_number(n):
@@ -159,7 +160,26 @@ def compare_len_strings(word_one,word_two):
 def test_compare_len_strings(word_one,word_two,expected):
     assert compare_len_strings(word_one,word_two)==True
 
-def print_tower(à)
+def print_tower(height):
+    draw_top(height)
+    draw_slices(height)
+    draw_bottom(height)
+
+def draw_top(height):
+    print(" "*(height + 1) +'|')
+
+def draw_bottom(height):
+    print("-" *((height + 1) * 2 + 1))
+
+def draw_slices(height):
+    for i in range(height-1,-1,-1):
+        value = height-i
+        print("value",value)
+        padding = i+1
+        print("padding",padding)
+        print(" " * padding + "#" * value + "|" + "#" * value)
+
+
 if __name__ == "__main__":
     # binary_to_decimal("110")
     # hex_to_decimal("19")
@@ -170,6 +190,7 @@ if __name__ == "__main__":
     # remove_duplicate("lalaLO")
     # capitalise("word in war")
     # capitalise_some_words(["this","is","my","word"],["is","my"])
+    print_tower(4)
 
 
 

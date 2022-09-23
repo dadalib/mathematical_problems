@@ -92,18 +92,84 @@ def reverse_string(word):
     return reverse_word
 
 
+def reverse_short(word):
+    reversed_text = word[::-1]
+    print("reverse text", reversed_text)
+    reversed_text = "".join(reverse_string(word))
 
+    print (reversed_text)
+    return reversed_text
 
+def is_palindrome(word):
+    reverse_word = word[::-1]
+    flag = False
+    print("reverse_word",reverse_word)
+    print("word",word)
+    if word.upper() == reverse_word.upper():
+        flag =True
+        return flag
+    return flag
 
+@pytest.mark.parametrize("word,expected",[("Otto",True)])
+def test_is_palindrome(word,expected):
+    assert is_palindrome(word) == expected  
 
-        
+def remove_duplicate(word):
 
+    result = ""
+    already_seen = set()
 
+    for current_char in word:
+        if not current_char.lower() in already_seen:
+            already_seen.add(current_char.lower())
+            result += current_char
 
+    print(result)
+    return result
 
+def capitalise(word):
+     title_word = word.title()
+
+     print (title_word)
+     return title_word 
+
+def capitalise_some_words(words,expection):
+
+    if len(expection)<0:
+        raise ValueError("Enter a list of expetion")
+
+    result =[]
+    for word_ex in expection:
+        for word in words:
+
+            if word_ex.lower() == word.lower():
+                result.append(word_ex.lower())
+            result.append(word.upper())
+
+    print (result)
+    return result
+
+def compare_len_strings(word_one,word_two):
+    if len(word_one)>len(word_two):
+        return True
+
+    return False
+
+@pytest.mark.parametrize("word_one,word_two,expected",[("ADFD","AB",True)])
+def test_compare_len_strings(word_one,word_two,expected):
+    assert compare_len_strings(word_one,word_two)==True
+
+def print_tower(à)
 if __name__ == "__main__":
     # binary_to_decimal("110")
     # hex_to_decimal("19")
     # separator_replace(["toto","mama"],"£££")
-    reverse_string("LOLITA")
+    # reverse_string("LOLITA")
+    # reverse_short("AMO")
+    # is_palindrome("Otto")
+    # remove_duplicate("lalaLO")
+    # capitalise("word in war")
+    # capitalise_some_words(["this","is","my","word"],["is","my"])
+
+
 

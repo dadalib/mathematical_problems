@@ -179,6 +179,22 @@ def draw_slices(height):
         print("padding",padding)
         print(" " * padding + "#" * value + "|" + "#" * value)
 
+def quizz_word(word,character):
+    """Replace all vowel by a chracter"""
+
+    vowel = "aeiouAEIOU"
+    new_word = ""
+
+    for char in word:
+        if char in vowel:
+            new_word +=character
+        else:
+            new_word += char
+
+    print(new_word)
+    return new_word
+
+
 
 if __name__ == "__main__":
     # binary_to_decimal("110")
@@ -190,7 +206,9 @@ if __name__ == "__main__":
     # remove_duplicate("lalaLO")
     # capitalise("word in war")
     # capitalise_some_words(["this","is","my","word"],["is","my"])
-    print_tower(4)
+    # print_tower(4)
+    quizz_word("toto",'%')
+
 
 
 
